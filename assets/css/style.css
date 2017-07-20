@@ -2,19 +2,18 @@ body{
 	background-image: url("../images/questionmarks.jpg");
 }
 
-.navbar-btn{
-	margin-top: 25px;
+hr{
+	border: 2px solid #00111a;
 }
 
 .jumbotron{
-	background-color: lightblue;
-	opacity: .7;
+	background-color: rgba(210, 236, 249, .6);
 }
 
 .triviaStylingHeading{
 	font-family: 'Chivo', sans-serif;
 	font-weight: bolder;
-	font-size: 40px;
+	font-size: 45px;
 	color: #79c6ec;
 	text-shadow: 2px 2px #00111a;
 }
@@ -22,6 +21,10 @@ body{
 .triviaStylingBody{
 	font-family: 'Asul', sans-serif;
 	color: #002233;
+}
+
+.btn-info{
+	background-color: #1880b4;
 }
 
 #heading{
@@ -34,4 +37,8 @@ body{
 
 #choices{
 	font-size: 24px;
+}
+
+#btnHolder{
+	margin-top: 50px;
 }
