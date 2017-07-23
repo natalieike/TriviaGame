@@ -164,8 +164,20 @@ $(document).ready(function(){
 		}, 10000);
 	};
 
+	var displayEnd = function(){
+		heading.html("That's the End!");
+		timer.empty();
+		body.html("Here are your results. To play again, click Start.")
+		choices.html("<div>Correct: " + correct + "</div><div>Incorrect: " + incorrect + "</div><div>Skipped: " + skipped +"</div>");
+		startBtn.show();
+	};
+
 
 	startBtn.click(function(){
+		it = 0;
+		correct = 0;
+		incorrect = 0;
+		skipped = 0;
 		startBtn.hide();
 		displayQuestion();
 	});
