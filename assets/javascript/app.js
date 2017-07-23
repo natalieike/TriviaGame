@@ -146,6 +146,7 @@ $(document).ready(function(){
 		clock.start();
 	};
 
+	//Displays the correct answer and tells the user whether they got the answer right or wrong
 	var displayResult = function(message){
 		var correctAnswer = questionArray[it].rightAnswer;
 		body.html(message);
@@ -153,24 +154,28 @@ $(document).ready(function(){
 		it++;
 	};
 
+	//Calls displayResult with the failure message
 	var displayFailure = function(){
 		displayResult("Oh Shoot, that's Incorrect.")
 		incorrect++;
 		moveToNext();
 	};
 
+	//Calls displayResult with the success message
 	var displaySuccess = function(){
-		displayResult("Great, you're correct!");
+		displayResult("Great, you're Correct!");
 		correct++
 		moveToNext();
 	};
 
+	//Calls displayResult with the timeout message
 	var displayTimeOut = function(){
 		displayResult("Oh Shoot, Time ran out.")
 		skipped++;
 		moveToNext();
 	}
 
+	//Decides if the answer given by the user is correct and calls the proper display function
 	var isCorrectAnswer = function(choice){
 		var correctAnswer = questionArray[it].rightAnswer;
 		if(choice == correctAnswer){
@@ -181,6 +186,7 @@ $(document).ready(function(){
 		}
 	};
 
+	//Decides whether to show next question or end the game
 	var moveToNext = function(){
 		setTimeout(function(){
 			if(it<questionArray.length){
@@ -192,6 +198,7 @@ $(document).ready(function(){
 		}, 10000);
 	};
 
+	//Displays end of game messaging
 	var displayEnd = function(){
 		heading.html("That's the End!");
 		timer.empty();
@@ -200,22 +207,25 @@ $(document).ready(function(){
 		startBtn.show();
 	};
 
-
+	//Event Handler for Start button - initialize game
 	startBtn.click(function(){
 		startBtn.hide();
 		initialize();
 	});
 
+	//Styling of choices for mouse hover - mouse enters
 	$("body").on("mouseenter", ".choiceDiv", function(){
 		var selection = $(this);
 		selection.addClass("hover");
 	});
 
+	//Styling of choices for mouse hover - mouse exits
 	$("body").on("mouseleave", ".choiceDiv", function(){
 		var selection = $(this);
 		selection.removeClass("hover");
 	});
 
+	//Event Handler for selecting an answer to a question
 	$("body").on("click", ".choiceDiv", function(){
 		var selection = $(this).attr("id");
 		clock.stop();
