@@ -115,7 +115,6 @@ $(document).ready(function(){
       url: queryURL,
       method: "GET"
       }).done(function(response) {
-      	console.log("in done funciton");
       	//Parse response into questionArray
       	for(var i=0; i<response.results.length; i++){
       		questionArray[i].question = response.results[i].question;
@@ -124,8 +123,6 @@ $(document).ready(function(){
       		questionArray[i].answerArray.splice(x, 0, response.results[i].correct_answer);
       		questionArray[i].rightAnswer = x;
       	}
-      	console.log(questionArray);
-      	console.log(response.results);
 				displayQuestion();
       });
 	}
